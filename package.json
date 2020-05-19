@@ -1,0 +1,10 @@
+{
+  "name": "chat-cn",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "client": "cd client && npm start",
+    "start": "npm run client"
+  }
+}

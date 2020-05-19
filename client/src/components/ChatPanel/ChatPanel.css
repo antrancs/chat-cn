@@ -1,0 +1,27 @@
+.chat-panel__container {
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.chat-panel-messages {
+  overflow-x: auto;
+}
+
+.chat-panel__controls {
+  display: flex;
+  margin-top: 8px;
+}
+
+.chat-panel__input {
+  flex: 1;
+  padding: 4px;
+}
+
+.chat-panel__send-btn {
+  padding: 8px;
+  margin-left: 4px;
+  cursor: pointer;
+}

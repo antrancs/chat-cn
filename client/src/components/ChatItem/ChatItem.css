@@ -1,0 +1,28 @@
+.chat-item {
+  display: flex;
+}
+
+.chat-item.chat-item--self {
+  justify-content: end;
+}
+
+.chat-item__message {
+  background-color: #f1f0f0;
+  color: rgba(0, 0, 0, 1);
+  border-radius: 8px;
+  padding: 8px;
+  margin-bottom: 8px;
+}
+
+.chat-item__date {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.chat-item__message--self {
+  background-color: rgb(0, 153, 255);
+  color: white;
+}
+
+.chat-item__message--self > .chat-item__date {
+  color: rgba(255, 255, 255, 0.7);
+}

@@ -1,0 +1,30 @@
+.contact-list-panel {
+  flex-basis: 300px;
+  background-color: rgba(0, 0, 0, 0.2);
+  height: 100%;
+  padding: 8px;
+}
+
+.contact-list__item {
+  padding: 8px 0px;
+  display: flex;
+  align-items: center;
+}
+
+.contact-list__item > a {
+  color: black;
+  text-decoration: none;
+}
+
+.contact-list__item::before {
+  content: '';
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.7);
+  margin-right: 8px;
+}
+
+.contact-list__item--active {
+  font-weight: bold;
+}

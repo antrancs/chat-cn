@@ -1,25 +1,33 @@
 import React from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
 import './App.css';
+import ContactListPanel from './components/ContactListPanel/ContactListPanel';
+import ChatPanel from './components/ChatPanel/ChatPanel';
+import AppContext from './context/AppContext';
+import { getCurrentUser } from './api/api';
 
 function App() {
+  const currentUserId = 'U01';
+
+  const currentUser = getCurrentUser(currentUserId);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <AppContext.Provider value={{ currentUser: currentUser }}>
+        <div className="App">
+          <ContactListPanel currentUser={currentUser} />
+
+          <Switch>
+            <Route path="/chat/:userId">
+              <ChatPanel />
+            </Route>
+
+            <Route path="/"></Route>
+          </Switch>
+        </div>
+      </AppContext.Provider>
+    </Router>
   );
 }
 
