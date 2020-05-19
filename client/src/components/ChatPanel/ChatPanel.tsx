@@ -27,6 +27,10 @@ const ChatPanel: FunctionComponent = () => {
   }, [currentUser.id, recipientId]);
 
   function handleSend() {
+    if (text.trim().length === 0) {
+      return;
+    }
+
     setChats([
       ...chats,
       {
